@@ -4,23 +4,27 @@
       <b-col class="google-map-column">
         <gmap-map
           :center="center"
-          :zoom="5"
-          style="width: 100%; height: 100%;">
+          :zoom="15"
+          style="width: 100%; height: 100%;"
+          ref="map">
           <gmap-marker
-            :key="index"
             v-for="(m, index) in markers"
+            :key="index"
             :position="m.position"
             :clickable="true"
-            :draggable="true"
+            :draggable="false"
             @click="center=m.position">
           </gmap-marker>
         </gmap-map>
       </b-col>
       <b-col class="list-column">
-        <h1>{{ msg }}</h1>
-        <b-alert show>
-          Hello Google Maps
-        </b-alert>
+        <div class="form-group">
+          <label for="addressInput">Address</label>
+          <gmap-autocomplete class="form-control" id="addressInput"
+            @place_changed="setPlace">
+          </gmap-autocomplete>
+        </div>
+        {{latLng.lat}}, {{latLng.lng}}
       </b-col>
     </b-row>
   </b-container>
@@ -31,13 +35,32 @@ export default {
   name: 'GoogleMaps',
   data () {
     return {
-      msg: 'Welcome to the Google Maps Testing Page',
-      center: {lat: 10.0, lng: 10.0},
       markers: [{
         position: {lat: 10.0, lng: 10.0}
       }, {
         position: {lat: 11.0, lng: 11.0}
-      }]
+      }],
+      place: null,
+      latLng: { lat: 49.2827291, lng: -123.12073750000002 }
+    }
+  },
+  computed: {
+    center: function () {
+      return this.latLng
+    }
+  },
+  methods: {
+    setPlace (place) {
+      try {
+        console.log(place)
+        this.latLng = {
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng()
+        }
+        console.log(this.latLng)
+      } catch (error) {
+        console.log('error')
+      }
     }
   }
 }
