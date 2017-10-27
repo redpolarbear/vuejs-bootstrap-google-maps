@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// import GoogleMaps from '@/components/GoogleMaps'
 import GoogleMaps from '@/components/GoogleMaps'
 
 Vue.use(Router)

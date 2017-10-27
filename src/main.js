@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
-import * as VueGoogleMaps from 'vue2-google-maps'
+// import * as VueGoogleMaps from 'vue2-google-maps'
 import App from './App'
 import router from './router'
 
@@ -19,15 +19,15 @@ Vue.component = function (name, definition) {
 } //
 
 Vue.use(BootstrapVue)
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyCc1149CMxTx2holKBrQmsiKgSafW0MPz0',
-    libraries: 'places, geometry' // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-  }
-})
+// Vue.use(VueGoogleMaps, {
+//   load: {
+//     key: 'AIzaSyCc1149CMxTx2holKBrQmsiKgSafW0MPzo',
+//     libraries: 'places, geometry' // This is required if you use the Autocomplete plugin
+//     // OR: libraries: 'places,drawing'
+//     // OR: libraries: 'places,drawing,visualization'
+//     // (as you require)
+//   }
+// })
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
