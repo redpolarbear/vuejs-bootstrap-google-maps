@@ -6,8 +6,14 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
+  globals: {
+    'google': true,
+    'navigator': true,
+    'MarkerClusterer': true
+  },
   env: {
     browser: true,
+    node: true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
