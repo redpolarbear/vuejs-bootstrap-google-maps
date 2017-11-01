@@ -47,10 +47,10 @@
                 <i class="fa fa-exchange fa-3x" aria-hidden="true"></i>
               </b-col>
               <b-col>
-                <h4 class="text-uppercase text-center">I want ...</h4>
+                <h4 class="text-uppercase text-center">and looking for ...</h4>
                 <b-media>
                   <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
-                  <h5 class="mt-0">Nested</h5>
+                  <h6 class="mt-0">Nested</h6>
                   <p class="mb-0">
                     Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
                     congue felis in faucibus.
@@ -85,94 +85,64 @@
             </b-row>
           </b-media>
         </b-card>
-        <b-card bg-variant="light">
-          <b-media>
-            <b-img slot="aside" blank rounded="circle" blank-color="#ccc" width="48" alt="placeholder" />
-            <div class="mt-0">
-              <h6>John Tom 
-                <small>@jtom</small>
-                <small> - Sept 21</small>
-              </h6>
-            </div>
-            <b-row>
-              <b-col>
-                <h4 class="text-uppercase text-center">I have ...</h4>
-                <b-media>
-                  <!-- <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" /> -->
-                  <b-img slot="aside" :src="book.imageLinks.thumbnail" height="112"/>
-                  <h6 class="m-0">{{ book.title }}</h6>
-                  <p class="m-0">{{ book.authors[0]}}</p>
-                  <p class="m-0">{{ book.categories[0] }}</p>
-                  <!-- <p class="m-0">{{ book.pageCount }}</p> -->
-                  <p class="m-0">{{ book.industryIdentifiers[0].identifier }} / {{ book.industryIdentifiers[1].identifier }}</p>
-                  <p class="m-0">{{ book.publisher }}</p>
-                  <p class="m-0">{{ book.publishedDate }}</p>
-                  <!-- <p>{{ book.description }}</p> -->
-                </b-media>
-              </b-col>
-              <b-col align-self="center" class="text-center" xl="auto" lg="12">
-                <i class="fa fa-exchange fa-3x" aria-hidden="true"></i>
-              </b-col>
-              <b-col>
-                <h4 class="text-uppercase text-center">I want ...</h4>
-                <b-media>
-                  <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
-                  <h5 class="mt-0">Nested</h5>
-                  <p class="mb-0">
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                    congue felis in faucibus.
-                  </p>
-                </b-media>
-              </b-col>
-            </b-row>
-            <hr>
-            <b-row>
-              <b-col>
-                <b-button variant="link">
-                  <i class="fa fa-comment-o" aria-hidden="true"></i>
-                </b-button>
-                <b-button variant="link">
-                  <i class="fa fa-retweet" aria-hidden="true"></i>
-                </b-button>
-                <b-button variant="link">
-                  <i class="fa fa-heart-o" aria-hidden="true"></i>
-                </b-button>
-                <b-button variant="link">
-                  <i class="fa fa-share" aria-hidden="true"></i>
-                </b-button>  
-              </b-col>
-              <b-col class="text-right">
-                <b-button size="sm">
-                  Request
-                </b-button>
-                <b-button size="sm">
-                  Contact
-                </b-button>
-              </b-col>
-            </b-row>
-          </b-media>
-        </b-card>
-        <b-card title="Card Title"
-                :img-src="book.imageLinks.thumbnail"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 20rem;"
-                class="mb-2">
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <b-button href="#" variant="primary">Go somewhere</b-button>
-        </b-card>
-        <b-card header-tag="header"
-                footer-tag="footer">
-            <h6 slot="header"
-                class="mb-0">{{ book.title }}</h6>
-            <em slot="footer">Footer Slot</em>
-            <p class="card-text">Header and footers using slots.</p>
-            <b-button href="#"
-                      variant="primary">Go somewhere</b-button>
-        </b-card>
+        <b-card-group deck class="flex-wrap">
+          <b-card no-body
+            class="mt-2 mb-2"
+            style="max-width: 17rem; min-width: 17rem;"
+            v-for="(item,i) in 10" :key="i">
+            <b-card-header class="pt-2 pb-2" >
+              <b-row no-gutters>
+                <b-col md="auto">
+                  <!-- user.avatar -->
+                  <b-img blank rounded="circle" blank-color="#ccc" width="48" />
+                </b-col>
+                <b-col class="ml-2" align-self="top">
+                  <!-- username -->
+                  <h6 class="m-0">John Tom</h6>
+                  <!-- unique name -->
+                  <h6 class="m-0"><small class="text-secondary">@jtom</small>
+                    <!-- moment -->
+                    <small> - Sept 21</small>
+                  </h6>
+                </b-col>
+              </b-row>
+            </b-card-header>
+            <!-- book.thumbnail - background -->
+            <b-card-img :src="book.imageLinks.thumbnail" class="book-card-background"></b-card-img>
+            <b-card-body>
+              <b-row class="book-card-body-image-row" align-h="center">
+                <!-- book.thumbnail - cover -->
+                <b-img rounded class="book-card-body-image" :src="book.imageLinks.thumbnail"></b-img>
+              </b-row>
+              <b-row class="text-center card-text justify-content-center mt-2">
+                <!-- book.title -->
+                <h6>Scattergories Word Search Puzzles</h6>
+                <!-- book.author -->
+                <h6><small>Mark Danna</small></h6>
+              </b-row>
+            </b-card-body>
+            <b-card-footer class="pt-1 pb-1">
+              <b-row align-h="between" no-gutters>
+                <b-col>
+                  <b-button variant="link">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  </b-button>
+                  <b-button variant="link">
+                    <i class="fa fa-retweet" aria-hidden="true"></i>
+                  </b-button>
+                  <b-button variant="link">
+                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                  </b-button>
+                </b-col>
+                <b-col md="auto" align-self="center">
+                  <b-button size="sm" variant="info">
+                    <i class="fa fa-exchange" aria-hidden="true"></i> More
+                  </b-button>
+                </b-col>
+              </b-row>
+            </b-card-footer>
+          </b-card>
+        </b-card-group>
       </b-col>
     </b-row>
   </b-container>
@@ -325,6 +295,18 @@ export default {
   height: 100%;
   margin: 0 auto;
 }
-
+.book-card-background.card-img {
+  filter: blur(2px) grayscale(100%) opacity(0.6);
+  max-height: 12rem;
+  object-fit: cover;
+}
+.book-card-body-image {
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  height: 168px;
+  margin-bottom: -8rem;
+  position: relative;
+  width: auto;
+  top: -8rem;
+}
 
 </style>
