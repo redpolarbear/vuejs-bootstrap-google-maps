@@ -18,7 +18,161 @@
             <b-button><i class="fa fa-camera fa-lg"></i></b-button>
           </b-input-group-btn> -->
         </b-input-group>
-        {{ latLng }}
+        <b-card bg-variant="light">
+          <b-media>
+            <b-img slot="aside" blank rounded="circle" blank-color="#ccc" width="48" alt="placeholder" />
+            <div class="mt-0">
+              <h6>John Tom 
+                <small>@jtom</small>
+                <small> - Sept 21</small>
+              </h6>
+            </div>
+            <b-row>
+              <b-col>
+                <h4 class="text-uppercase text-center">I have ...</h4>
+                <b-media>
+                  <!-- <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" /> -->
+                  <b-img slot="aside" :src="book.imageLinks.thumbnail" height="112"/>
+                  <h6 class="m-0">{{ book.title }}</h6>
+                  <p class="m-0">{{ book.authors[0]}}</p>
+                  <p class="m-0">{{ book.categories[0] }}</p>
+                  <!-- <p class="m-0">{{ book.pageCount }}</p> -->
+                  <p class="m-0">{{ book.industryIdentifiers[0].identifier }} / {{ book.industryIdentifiers[1].identifier }}</p>
+                  <p class="m-0">{{ book.publisher }}</p>
+                  <p class="m-0">{{ book.publishedDate }}</p>
+                  <!-- <p>{{ book.description }}</p> -->
+                </b-media>
+              </b-col>
+              <b-col align-self="center" class="text-center" xl="auto" lg="12">
+                <i class="fa fa-exchange fa-3x" aria-hidden="true"></i>
+              </b-col>
+              <b-col>
+                <h4 class="text-uppercase text-center">I want ...</h4>
+                <b-media>
+                  <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <h5 class="mt-0">Nested</h5>
+                  <p class="mb-0">
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                    congue felis in faucibus.
+                  </p>
+                </b-media>
+              </b-col>
+            </b-row>
+            <hr>
+            <b-row>
+              <b-col>
+                <b-button variant="link">
+                  <i class="fa fa-comment-o" aria-hidden="true"></i>
+                </b-button>
+                <b-button variant="link">
+                  <i class="fa fa-retweet" aria-hidden="true"></i>
+                </b-button>
+                <b-button variant="link">
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </b-button>
+                <b-button variant="link">
+                  <i class="fa fa-share" aria-hidden="true"></i>
+                </b-button>  
+              </b-col>
+              <b-col class="text-right">
+                <b-button size="sm">
+                  Request
+                </b-button>
+                <b-button size="sm">
+                  Contact
+                </b-button>
+              </b-col>
+            </b-row>
+          </b-media>
+        </b-card>
+        <b-card bg-variant="light">
+          <b-media>
+            <b-img slot="aside" blank rounded="circle" blank-color="#ccc" width="48" alt="placeholder" />
+            <div class="mt-0">
+              <h6>John Tom 
+                <small>@jtom</small>
+                <small> - Sept 21</small>
+              </h6>
+            </div>
+            <b-row>
+              <b-col>
+                <h4 class="text-uppercase text-center">I have ...</h4>
+                <b-media>
+                  <!-- <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" /> -->
+                  <b-img slot="aside" :src="book.imageLinks.thumbnail" height="112"/>
+                  <h6 class="m-0">{{ book.title }}</h6>
+                  <p class="m-0">{{ book.authors[0]}}</p>
+                  <p class="m-0">{{ book.categories[0] }}</p>
+                  <!-- <p class="m-0">{{ book.pageCount }}</p> -->
+                  <p class="m-0">{{ book.industryIdentifiers[0].identifier }} / {{ book.industryIdentifiers[1].identifier }}</p>
+                  <p class="m-0">{{ book.publisher }}</p>
+                  <p class="m-0">{{ book.publishedDate }}</p>
+                  <!-- <p>{{ book.description }}</p> -->
+                </b-media>
+              </b-col>
+              <b-col align-self="center" class="text-center" xl="auto" lg="12">
+                <i class="fa fa-exchange fa-3x" aria-hidden="true"></i>
+              </b-col>
+              <b-col>
+                <h4 class="text-uppercase text-center">I want ...</h4>
+                <b-media>
+                  <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <h5 class="mt-0">Nested</h5>
+                  <p class="mb-0">
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                    congue felis in faucibus.
+                  </p>
+                </b-media>
+              </b-col>
+            </b-row>
+            <hr>
+            <b-row>
+              <b-col>
+                <b-button variant="link">
+                  <i class="fa fa-comment-o" aria-hidden="true"></i>
+                </b-button>
+                <b-button variant="link">
+                  <i class="fa fa-retweet" aria-hidden="true"></i>
+                </b-button>
+                <b-button variant="link">
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </b-button>
+                <b-button variant="link">
+                  <i class="fa fa-share" aria-hidden="true"></i>
+                </b-button>  
+              </b-col>
+              <b-col class="text-right">
+                <b-button size="sm">
+                  Request
+                </b-button>
+                <b-button size="sm">
+                  Contact
+                </b-button>
+              </b-col>
+            </b-row>
+          </b-media>
+        </b-card>
+        <b-card title="Card Title"
+                :img-src="book.imageLinks.thumbnail"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+        <b-card header-tag="header"
+                footer-tag="footer">
+            <h6 slot="header"
+                class="mb-0">{{ book.title }}</h6>
+            <em slot="footer">Footer Slot</em>
+            <p class="card-text">Header and footers using slots.</p>
+            <b-button href="#"
+                      variant="primary">Go somewhere</b-button>
+        </b-card>
       </b-col>
     </b-row>
   </b-container>
@@ -33,7 +187,45 @@ export default {
       map: null,
       infoWindow: null,
       latLng: {},
-      marker: []
+      marker: [],
+      book: {
+        title: 'Scattergories Word Search Puzzles',
+        authors: [
+          'Mark Danna'
+        ],
+        publisher: 'Sterling Publishing Company, Inc.',
+        publishedDate: '2009-06-02',
+        description: 'Fans of Hasbro’s classic SCATTERGORIES can now play anywhere, anytime--and even compete when there’s no other player around! And those who simply love word searches will enjoy a new, seamlessly intertwined game-and-puzzle experience. Here are 60 searches, each with 12 theme categories--perhaps \'Book Titles” or \'Terms of Endearment”--and a letter of the alphabet. Players try to come up with as many answers that start with that letter as they can. Then, they look in the grid, see if their answers are there, and get points for every one they find. Extra letters in the grid spell out a few more items in one of the categories. Those in need of a little help can find word lists in the back to guide them!',
+        industryIdentifiers: [{
+          type: 'ISBN_10',
+          identifier: '1402759770'
+        },
+        {
+          type: 'ISBN_13',
+          identifier: '9781402759772'
+        }
+        ],
+        readingModes: {
+          text: false,
+          image: true
+        },
+        pageCount: 159,
+        printType: 'BOOK',
+        categories: [
+          'Games'
+        ],
+        maturityRating: 'NOT_MATURE',
+        allowAnonLogging: false,
+        contentVersion: '0.0.1.0.preview.1',
+        imageLinks: {
+          smallThumbnail: 'http://books.google.com/books/content?id=1W4rRQL1KwEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+          thumbnail: 'http://books.google.com/books/content?id=1W4rRQL1KwEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
+        },
+        language: 'en',
+        previewLink: 'http://books.google.ca/books?id=1W4rRQL1KwEC&printsec=frontcover&dq=isbn:1402759770&hl=&cd=1&source=gbs_api',
+        infoLink: 'http://books.google.ca/books?id=1W4rRQL1KwEC&dq=isbn:1402759770&hl=&source=gbs_api',
+        canonicalVolumeLink: 'https://books.google.com/books/about/Scattergories_Word_Search_Puzzles.html?hl=&id=1W4rRQL1KwEC'
+      }
     }
   },
   mounted () {
